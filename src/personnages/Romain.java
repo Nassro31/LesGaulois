@@ -14,7 +14,9 @@ public class Romain {
 		return force>0 ;
 	}
 	
-	
+	public int getForce() {
+		return force;
+	}
 	
 	public String getNom() {
 		return nom;

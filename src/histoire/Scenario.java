@@ -17,6 +17,9 @@ public class Scenario {
 		asterix.parler("Bonjour");
 		Romain minus = new Romain("Minus", 6);
 		minus.parler("UN GAU... UN GAUGAU..");
-		asterix.frapper(minus);
+		do {
+			asterix.frapper(minus);			
+		} while (minus.getForce() >0);
+		
 	}
 }

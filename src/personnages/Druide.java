@@ -1,4 +1,5 @@
 package personnages;
+
 import java.util.*;
 
 public class Druide {
@@ -18,11 +19,11 @@ public class Druide {
 	public String getNom() {
 		return nom;
 	}
-	
+
 	public int getEffetPotionMin() {
 		return effetPotionMin;
 	}
-	
+
 	public int getEffetPotionMax() {
 		return effetPotionMax;
 	}
@@ -34,27 +35,27 @@ public class Druide {
 	public String prendreParole() {
 		return "Le druide " + nom + " : ";
 	}
-	
-	public int preparerPotion(){
+
+	public void preparerPotion() {
 		Random r = new Random();
-		int a = r.nextInt(effetPotionMax - effetPotionMin + 1) + effetPotionMin;
-		if (a>7) {
+		forcePotion = r.nextInt(effetPotionMax - effetPotionMin + 1) + effetPotionMin;
+		if (forcePotion > 7) {
 			System.out.println("J'ai préparé une super potion de force");
 		} else {
-			System.out.println("Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force" + a + " ");	
+			System.out.println(
+					"Je n'ai pas trouvé tous les ingrédients, ma potion est seulement de force" + forcePotion + " ");
 		}
-		return a;
 	}
-	
+
 	public void booster(Gaulois gaulois) {
-		if (gaulois.getNom() == "Obelix") {
+		if (gaulois.getNom().equals("Obelix")) {
 			System.out.println("« Non, Obélix !... Tu n’auras pas de potion magique !");
 		} else {
-			gaulois.boirePotion(preparerPotion());
+			gaulois.boirePotion(forcePotion);
 		}
-		
+
 	}
-	
+
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("Panoramix", 5, 10);
 		panoramix.preparerPotion();
