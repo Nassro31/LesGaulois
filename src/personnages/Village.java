@@ -31,7 +31,7 @@ public class Village {
 		villageois[getNbVillageois()] = unGaulois;
 		nbVillageois++;
 	}
-	public Gaulois trouverHabiant(int numero){
+	public Gaulois trouverHabitant(int numero){
 		Gaulois gaulois = null ;
 		for (int i = 0; i < nbVillageois; i++) {
 			if(i == numero){
@@ -43,9 +43,11 @@ public class Village {
 	
 	public static void main(String[] args) {
 		Village vill = new Village("Village des Irr�ductibles",30);
-		Gaulois asterix = new Gaulois("asterix",10);
+		Gaulois asterix = new Gaulois("Asterix", 8);
 		vill.ajouterHabitant(asterix);
-		System.out.println((vill.trouverHabiant(0)).getNom());
+		Gaulois gaulois = vill.trouverHabitant(1);
+		System.out.println(gaulois);
+
 		
 	}
 }

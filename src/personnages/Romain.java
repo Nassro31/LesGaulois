@@ -7,8 +7,15 @@ public class Romain {
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		assert(forcePositive());
 	}
-
+	
+	private boolean forcePositive() {
+		return force>0 ;
+	}
+	
+	
+	
 	public String getNom() {
 		return nom;
 	}
@@ -22,17 +29,20 @@ public class Romain {
 	}
 
 	public void recevoirCoup(int forceCoup) {
+		assert(forceCoup>0);
+		int force1 = force;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aie");
 		} else {
 			parler("J'abandonne...");
 		}
+		assert(force1>force);
 	}
 	public static void main(String[] args) {
-		Romain cesar = new Romain("cesar", 5);
-		cesar.prendreParole();
-		cesar.parler("Je suis cesar");
-		cesar.recevoirCoup(2);
+		Romain minus = new Romain("minus", 6);
+		minus.prendreParole();
+		minus.parler("Je suis minus");
+		minus.recevoirCoup(2);
 	}
 }
