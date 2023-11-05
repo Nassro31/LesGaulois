@@ -3,9 +3,7 @@ package personnages;
 public class Gaulois {
 	private String nom;
 	private int effetPotion = 1;
-	private int forcePotion = 0;
-	private int force
-	private int nbTrophees;
+	private int force,nbTrophees;
     private Equipement trophees[] = new Equipement[100];
 	
 	public Gaulois(String nom, int force) {
@@ -43,7 +41,6 @@ public class Gaulois {
 		for (int i = 0; trophees != null && i < trophees.length; i++, nbTrophees++) {
 			this.trophees[nbTrophees] = trophees[i];
 		}
-		return;
 	}
 
 	//@Override
